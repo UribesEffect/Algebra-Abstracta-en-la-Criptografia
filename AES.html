@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificación AES</title>
+    <style>
+        body {
+            background-color: rgb(96, 52, 228);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .example {
+            border: 1px solid white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Codificación AES</h1>
+
+    <h2>Introducción</h2>
+    <p>El algoritmo AES (Advanced Encryption Standard) es un método de cifrado simétrico ampliamente utilizado para proteger la confidencialidad de la información. Se basa en una estructura de clave y operaciones de sustitución y permutación para cifrar y descifrar datos de manera segura.</p>
+
+    <h2>Estructura y Funcionamiento del AES</h2>
+    <p>El algoritmo AES opera en bloques de datos de tamaño fijo y utiliza una clave secreta compartida entre el emisor y el receptor para cifrar y descifrar los mensajes. La clave puede tener diferentes longitudes, pero las más comunes son de 128, 192 o 256 bits.</p>
+    
+    <p>El proceso de cifrado y descifrado en AES se basa en rondas de operaciones, donde cada ronda aplica una serie de transformaciones al bloque de datos utilizando partes de la clave. Estas transformaciones incluyen sustituciones no lineales, permutaciones de filas y columnas, y operaciones de mezcla de bytes.</p>
+
+    <h3>Generación de claves AES</h3>
+    <p>Para utilizar AES, se necesita una clave secreta compartida entre el emisor y el receptor. La generación de esta clave implica seleccionar aleatoriamente una secuencia de bits con la longitud adecuada (128, 192 o 256 bits) y mantenerla segura entre las partes autorizadas.</p>
+
+    <h3>Operaciones de cifrado y descifrado</h3>
+    <p>El proceso de cifrado en AES implica dividir el bloque de datos en una matriz de bytes y aplicar una serie de rondas de transformación utilizando partes de la clave. Cada ronda incluye operaciones de sustitución, permutación y mezcla que ocultan el patrón original de los datos.</p>
+
+    <p>Para descifrar un mensaje cifrado con AES, se aplica el mismo número de rondas de operaciones en orden inverso utilizando la misma clave secreta. Esto permite revertir las transformaciones aplicadas durante el cifrado y recuperar los datos originales.</p>
+
+    <h2>Ejemplo</h2>
+    <div class="example">
+        <p>Supongamos que queremos cifrar el mensaje "Hola, mundo" utilizando AES con una clave de 128 bits.</p>
+        <ol>
+            <li>Generamos una clave aleatoria de 128 bits, por ejemplo: 0x2b7e151628aed2a6abf7158809cf4f3c.</li>
+            <li>Dividimos el mensaje en bloques de 128 bits.</li>
+            <li>Aplicamos el proceso de cifrado AES a cada bloque de datos utilizando la clave generada.</li>
+            <li>El mensaje cifrado resultante es enviado al receptor.</li>
+            <li>El receptor utiliza la misma clave para descifrar el mensaje utilizando el proceso inverso de AES.</li>
+            <li>El receptor obtiene el mensaje original "Hola, mundo".</li>
+        </ol>
+    </div>
+
+    <h2>Conclusión</h2>
+    <div class="conclusion">
+        <p>El algoritmo AES ofrece una sólida protección para la confidencialidad de la información mediante el cifrado simétrico. Su estructura y operaciones complejas proporcionan una capa adicional de seguridad que dificulta la recuperación de la información original sin la clave adecuada.</p>
+        
+        <p>A través de su estructura de rondas y operaciones matemáticas, AES se ha convertido en el estándar de facto para la seguridad de datos en una amplia gama de aplicaciones, desde la comunicación en línea hasta el almacenamiento de información confidencial.</p>
+        
+        <p>Al comprender cómo funciona AES y cómo se implementa, las organizaciones pueden tomar medidas proactivas para proteger su información contra accesos no autorizados y garantizar la privacidad y seguridad de sus comunicaciones digitales.</p>
+    </div>
+</body>
+</html>

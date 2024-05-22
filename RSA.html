@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Codificación RSA</title>
+    <style>
+        body {
+            background-color: rgb(96, 52, 228);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .example {
+            border: 1px solid white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificación RSA</title>
+</head>
+<body>
+    <h1>Codificación RSA</h1>
+
+    <h2>Introducción</h2>
+    <p>La codificación RSA es un algoritmo de criptografía asimétrica ampliamente utilizado para asegurar la comunicación en línea. Funciona en base a la dificultad de factorizar números grandes en sus factores primos.</p>
+
+    <h2>Algebra abstracta y RSA</h2>
+    <p>El algoritmo RSA, una de las piedras angulares de la criptografía moderna, utiliza profundamente conceptos de álgebra abstracta. En particular, se apoya en la teoría de números y en la aritmética modular para garantizar la seguridad en la codificación y descodificación de mensajes.</p>
+    
+    <p>En términos de álgebra abstracta, el algoritmo RSA aprovecha la aritmética modular para operar en espacios de números finitos, y la teoría de números para la generación de claves seguras. La seguridad de RSA se basa en la dificultad de factorizar números grandes, un problema intrínsecamente ligado a la teoría de números y a la estructura de los grupos multiplicativos de enteros módulo n.</p>
+
+    <p>Para entender más a fondo cómo se relaciona el álgebra abstracta con RSA, es esencial examinar cómo se generan las claves y cómo se realiza la codificación y descodificación de mensajes utilizando este algoritmo.</p>
+
+    <h3>Generación de claves RSA</h3>
+    <p>El proceso de generación de claves en RSA implica la selección de dos números primos grandes, p y q. Estos números primos forman la base de la seguridad del algoritmo, ya que la factorización de su producto es un problema computacionalmente difícil.</p>
+
+    <p>Una vez seleccionados p y q, se calcula el producto n = p * q, que se utiliza como módulo en las operaciones de cifrado y descifrado. Además, se calcula la función phi de Euler, φ(n) = (p - 1) * (q - 1), la cual es crucial para determinar la clave privada.</p>
+
+    <p>Para seleccionar la clave pública, se elige un exponente de cifrado e que sea coprimo con φ(n), es decir, que no tenga ningún factor común con φ(n) excepto 1. Por lo general, se elige un número pequeño y comúnmente se utiliza el valor 65537 debido a su eficiencia computacional.</p>
+
+    <p>Para calcular la clave privada, se encuentra el inverso multiplicativo de e módulo φ(n), que se denota como d. Esto se logra utilizando el algoritmo de Euclides extendido.</p>
+
+    <h3>Operaciones de cifrado y descifrado</h3>
+    <p>Una vez que se han generado las claves pública (e, n) y privada (d, n), se pueden realizar las operaciones de cifrado y descifrado de mensajes.</p>
+
+    <p>Para cifrar un mensaje m utilizando la clave pública, se aplica la función de cifrado c = m^e mod n. Esto significa que el mensaje se eleva a la potencia del exponente de cifrado e y luego se calcula el residuo al dividir el resultado por n.</p>
+
+    <p>Para descifrar el mensaje cifrado c utilizando la clave privada, se aplica la función de descifrado m = c^d mod n. De manera similar al cifrado, el mensaje cifrado se eleva a la potencia del exponente de descifrado d y luego se calcula el residuo al dividir el resultado por n.</p>
+
+    <h2>Ejemplo</h2>
+    <div class="example">
+        <p>Supongamos que queremos codificar el número 42 utilizando RSA.</p>
+        <ol>
+            <li>Seleccionamos dos números primos grandes, p = 17 y q = 23.</li>
+            <li>Calculamos n = p * q = 391.</li>
+            <li>Calculamos la función phi de Euler: φ(n) = (p - 1) * (q - 1) = 352.</li>
+            <li>Elegimos un número e que sea coprimo con φ(n) y menor que φ(n). Por ejemplo, e = 5.</li>
+            <li>Calculamos el inverso multiplicativo de e módulo φ(n). En este caso, d = 221.</li>
+            <li>El par de claves público es (e, n) = (5, 391).</li>
+            <li>El par de claves privado es (d, n) = (221, 391).</li>
+            <li>Para codificar el número 42, aplicamos la fórmula c = m^e mod n, donde m es el número a codificar. En este caso, c = 42^5 mod 391 = 130.</li>
+            <li>El número codificado es 130.</li>
+        </ol>
+    </div>
+
+    <h2>Conclusión</h2>
+    <div class="conclusion">
+        <p>La codificación RSA emerge en el mundo de la criptografía, fusionando intrincados conceptos de álgebra abstracta con la tecnología moderna para salvaguardar la seguridad en las comunicaciones digitales. En este viaje a través de sus mecanismos, hemos explorado la complejidad de la generación de claves, donde dos números primos se entrelazan para formar una fortaleza numérica casi inexpugnable.</p>
+        
+        <p>Asimismo, hemos usado operaciones de cifrado y descifrado, donde la aritmética modular y la teoría de números se convierten en el tapiz sobre el cual se tejen mensajes secretos. Este algoritmo, nacido en los cimientos del álgebra abstracta, se erige como un faro de esperanza en un océano digital plagado de amenazas cibernéticas.</p>
+        
+        <p>Por último, pero no menos importante, hemos vislumbrado la belleza matemática que subyace en cada paso de RSA. Desde la selección cuidadosa de números primos hasta la aplicación ingeniosa de algoritmos de inversión modular, cada aspecto de este proceso refleja la elegancia y la sofisticación del pensamiento matemático humano.</p>
+        
+        <p>En conclusión, RSA no solo protege nuestros mensajes y transacciones en línea, sino que también encarna la convergencia entre la teoría abstracta y la aplicación práctica. Es una buena forma para transformar ideas puras en herramientas tangibles que moldean el mundo de una forma digital.</p>
+    </div>
+</body>
+</html>
